@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bank of Clothes | Community Utility &amp; Institutional Trust</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#b5c8e5",
+                    "on-background": "#1b1c1d",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#44474d",
+                    "background": "#fbf9fb",
+                    "secondary-fixed": "#9eefff",
+                    "tertiary-fixed-dim": "#40deb3",
+                    "surface-variant": "#e4e2e4",
+                    "inverse-surface": "#303032",
+                    "tertiary": "#000c07",
+                    "surface-container-low": "#f5f3f5",
+                    "surface-container-high": "#e9e7ea",
+                    "tertiary-container": "#00261c",
+                    "primary-container": "#0d2137",
+                    "on-primary-container": "#7689a4",
+                    "surface-container": "#efedef",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "outline": "#74777d",
+                    "surface-bright": "#fbf9fb",
+                    "secondary-fixed-dim": "#77d4e5",
+                    "surface": "#fbf9fb",
+                    "secondary": "#006876",
+                    "primary-fixed": "#d2e4ff",
+                    "surface-container-highest": "#e4e2e4",
+                    "primary": "#000917",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#4d6079",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c4c6cd",
+                    "on-secondary-container": "#006d7b",
+                    "on-primary-fixed": "#081c32",
+                    "inverse-on-surface": "#f2f0f2",
+                    "on-tertiary-container": "#009a79",
+                    "on-tertiary-fixed-variant": "#00513e",
+                    "on-primary-fixed-variant": "#364860",
+                    "surface-dim": "#dbd9dc",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#001f24",
+                    "tertiary-fixed": "#65fbcf",
+                    "on-surface": "#1b1c1d",
+                    "secondary-container": "#92edff",
+                    "on-secondary-fixed-variant": "#004e59",
+                    "on-tertiary-fixed": "#002117",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#b5c8e5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-tablet": "32px",
+                    "margin-desktop": "64px",
+                    "max-width": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopAppBar -->
+<header class="bg-surface shadow-sm docked full-width top-0 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 z-50 sticky">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">Bank of Clothes</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-secondary font-bold font-label-md text-label-md transition-colors" href="#">Home</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors px-2 py-1 rounded" href="#">Donate</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors px-2 py-1 rounded" href="#">Browse</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors px-2 py-1 rounded" href="#">Requests</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="Profile" data-alt="A professional studio portrait of a young adult with a friendly expression, representing a dedicated student volunteer. The lighting is soft and natural, emphasizing a bright, clean aesthetic that fits a modern corporate identity. The background is a minimalist, light grey gradient to maintain focus on the subject's approachable demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMUkcx87Y-FQ-enURQQp6gKK75FesoxiLJkDkv9d8EeHBAjMSgE1A0_WAPcGEKch4B0f23DiR1SJeZ69BtweOdyVX6nFREZdBK8MyzpYKlOwrHyIM0MWA4aT5jqnc6QheN6phYj4B9MSqTbQj84-t7CPhCFEi8YLSJ1QetutkKTNpCAD4VW8mqitJ727pI2LMx6Frv3YV3H1kT4J-umtNSPeTd54KCICC02NE4FOxBlq1vok9p0FNBQBSX763jS7f9_xR5ZkAxubkv"/>
+</div>
+</div>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="relative h-[600px] flex items-center overflow-hidden bg-primary-container">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 mix-blend-overlay" data-alt="A vast, organized warehouse facility with rows of neatly folded clothing in various colors including navy, teal, and white. The lighting is high-key and professional, creating a sense of scale and institutional efficiency. The atmosphere is optimistic and industrious, representing a modern resource management center for community support." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBuv1m5sKtUYyUxnTXpslwO_QQr9K5-C3ZhHPKVL50JnhMcr2jIr-FUvFhqa-ZhkM5_V5e6g9scL0XTRZ3Y4LcWgdkLTAJQ2WQlabIr3aVCPd7EOJzA09-uN3cUqpZNGz9T2PwVRWU8YU7jmz6IN5B98DLyoq8l_f6J4d_k-8Cz_mg9oHC9Jcj-s-7TkLldpdeBF937lJ0cujo_SFY4rZrtpuKuA-Tf6y-zCOvb7r3donMIwvlZZfWrpXz9Y3wyO7kstoX3-eVS501"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop w-full">
+<div class="max-w-2xl">
+<h1 class="font-headline-xl text-headline-xl text-on-primary mb-6 leading-tight">
+                        Empowering Communities Through Shared Resources.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-10">
+                        The Bank of Clothes is a professional platform dedicated to managing and distributing quality apparel to those in need. Join our network of donors and partners today.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md px-8 py-4 rounded-lg shadow-lg scale-95 active:scale-90 transition-transform hover:bg-tertiary-fixed-dim">
+                            Make a Donation
+                        </button>
+<button class="bg-transparent border-2 border-on-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded-lg hover:bg-on-primary/10 transition-colors">
+                            Request Support
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Statistics -->
+<section class="py-16 bg-surface">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Stat 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-4" data-icon="volunteer_activism">volunteer_activism</span>
+<h3 class="font-headline-lg text-headline-lg text-primary">12,450+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Donations Received</p>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-6">
+<div class="bg-tertiary-fixed h-2 rounded-full w-[85%]"></div>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-4" data-icon="handshake">handshake</span>
+<h3 class="font-headline-lg text-headline-lg text-primary">8,920</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Items Distributed</p>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-6">
+<div class="bg-secondary-container h-2 rounded-full w-[70%]"></div>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-4" data-icon="inventory_2">inventory_2</span>
+<h3 class="font-headline-lg text-headline-lg text-primary">3,530</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Available Now</p>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-6">
+<div class="bg-primary-fixed-dim h-2 rounded-full w-[45%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">A Simple, Transparent Process</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                        We leverage institutional standards to ensure every donation is tracked, verified, and delivered to create maximum community impact.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter relative">
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-6 shadow-md">
+<span class="material-symbols-outlined" data-icon="app_registration">app_registration</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-2">1. Register</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant px-4">Create your donor or recipient profile on our secure portal.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-6 shadow-md">
+<span class="material-symbols-outlined" data-icon="package_2">package_2</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-2">2. Quality Check</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant px-4">Donated items are inspected to meet our professional standards.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-6 shadow-md">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-2">3. Cataloging</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant px-4">Items are entered into our real-time inventory system.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-6 shadow-md">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-2">4. Distribution</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant px-4">Resources are distributed through our partner network.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Recently Added Preview -->
+<section class="py-24 bg-surface">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Recently Added</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Fresh inventory verified and ready for distribution.</p>
+</div>
+<button class="flex items-center gap-2 text-secondary font-label-md text-label-md hover:underline">
+                        View All Items <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Item Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-outline-variant group">
+<div class="h-64 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-quality, professional product photograph of a classic navy blue wool coat displayed on a minimalist white background. The lighting is clean and soft, emphasizing the texture and craftsmanship of the garment. This image represents the high standards of items available at the Bank of Clothes, reflecting institutional quality and care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8QrJkGha5tDj1SMQlcSShNc51acFQuG4HIWWGa1B3mpFiuUVfxzP3SkK9hZ34peCcvcGwYQVsI5OuLuItI4QWpW2DZEVkJ9wsM3Bk9qt_pG_C8QDd0UicqMjHAydTSGh7z6NEqob5PYzxoXREW-kMRBnf_FlPllJl5kU-HUzvnbpJ7oIXqusCYslZwt6-U6meOlZ0snCduZiknIi4BeYFgREdUv3MgAF4YL-y_rODTFB_lTmwoswCXa-ys-0y6jwrr9v4HsHIdzep"/>
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 rounded-full bg-tertiary-fixed/20 text-on-tertiary-fixed-variant font-label-md text-[12px] mb-3">Outerwear</span>
+<h5 class="font-headline-md text-headline-md text-primary mb-1 text-lg">Winter Pea Coat</h5>
+<p class="text-body-sm text-on-surface-variant mb-4">Size: Men's Large • Condition: Excellent</p>
+<button class="w-full py-2 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md scale-95 active:scale-90 transition-transform">Request Item</button>
+</div>
+</div>
+<!-- Item Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-outline-variant group">
+<div class="h-64 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, studio-lit photograph of vibrant red running shoes placed on a light grey surface. The lighting is bright and modern, creating a professional commercial aesthetic. The focus is sharp, highlighting the premium condition of the footwear as part of the community resource catalog, symbolizing energy and accessibility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO-PKSsF8dEoK_ryRExGKTxpa1fdGCa6PcaySlFsoQtcZoZlDXakZgqLLXC4ymwK9qXXx2h7QnmM4b1NfjJm-_uNJsCh-E2K6BhscOk7cWcokhifAmHHEDTZrq9qzSBw2vPEufuyHjYmA06oXDm3Bms5wJC-_1XoWS-xqG87CQMnadfOETtF4R9qf5oO_L35aZfKxRiQeTtIytIp2jYf0fMT0mWCtjUg-F43HtqZvfgUJJQfkDA4meQmq-cLzDtwXJ3OGLPmvnndoC"/>
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 rounded-full bg-secondary-container/20 text-on-secondary-fixed-variant font-label-md text-[12px] mb-3">Footwear</span>
+<h5 class="font-headline-md text-headline-md text-primary mb-1 text-lg">Athletic Runners</h5>
+<p class="text-body-sm text-on-surface-variant mb-4">Size: 42 • Condition: Like New</p>
+<button class="w-full py-2 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md scale-95 active:scale-90 transition-transform">Request Item</button>
+</div>
+</div>
+<!-- Item Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-outline-variant group">
+<div class="h-64 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A stylish and professional photograph of children's colorful summer wear, neatly arranged in a bright, airy setting. The palette is upbeat and cheerful, featuring soft yellows and mint greens. The lighting is diffused and natural, conveying a sense of warmth and community care, fitting for a modern charitable platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ4SS9xIReya0fh3oyJFPxyR-FtxLic67iPl0svwEbXd8OcJ7sUo7vXfUybczy_xIRkgiJ6v9vbAtHMbhoDlm6EBi6QDeWeztktWCUzRwUiuMDs22bJ5fCiASkiAE94ktUirOtmvY5Ei9TwI88KAMNFZKOMUgLZ3eXX1SSZRsq1-LbG6tQyq1zRdo-3jWDsEGH6Vi-h98PvXuZvem9H1HLFKQkRc6w3onreYSKFyXOf29L2riSfc_wmyOnAanJ05QGmYRkDje5fzyt"/>
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 rounded-full bg-tertiary-fixed/20 text-on-tertiary-fixed-variant font-label-md text-[12px] mb-3">Children's</span>
+<h5 class="font-headline-md text-headline-md text-primary mb-1 text-lg">Kids Set</h5>
+<p class="text-body-sm text-on-surface-variant mb-4">Age: 6-8 Yrs • Condition: Good</p>
+<button class="w-full py-2 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md scale-95 active:scale-90 transition-transform">Request Item</button>
+</div>
+</div>
+<!-- Item Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-outline-variant group">
+<div class="h-64 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A studio product shot of a high-end, minimalist white cotton t-shirt, folded with precision on a dark surface. The high contrast lighting between the white garment and the navy environment creates a professional, corporate look. It reflects the focus on clean, high-utility items that the platform prioritizes for its users." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Yp3aJpFSWakDrSD4HtK8qGjzWHu0kGO80MmT-dI3iV0imGuioj17A9eTi0TKM6mwu61w7Q0OW8ImjZ1ZV-wve53RuOnX_CmCn-QCP4N3mGwuvCLRaohfX88hrY0SouOuU8k6syorPiK69E0v2bqXEz1auy3Fya9yiWp1mJMRpSSFR-VsdSxHXstBaMoJcqd8K1QeMUEEOqYWhPX7833uZtZP3WW63rNWZwgtJyOHOxGVb_olarwp7Dpnv6u0N476T-UbwcieQ_m-"/>
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 rounded-full bg-primary-fixed/20 text-on-primary-fixed-variant font-label-md text-[12px] mb-3">Basics</span>
+<h5 class="font-headline-md text-headline-md text-primary mb-1 text-lg">Cotton Tee Pack</h5>
+<p class="text-body-sm text-on-surface-variant mb-4">Size: Medium • Condition: New</p>
+<button class="w-full py-2 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md scale-95 active:scale-90 transition-transform">Request Item</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Partner Banner -->
+<section class="py-12 bg-primary-container text-on-primary overflow-hidden">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="text-center md:text-left">
+<h3 class="font-headline-md text-headline-md">Partner with an Institution of Trust</h3>
+<p class="font-body-sm text-body-sm text-on-primary-container">We collaborate with NGOs and corporate sponsors globally.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-12 opacity-50">
+<span class="font-bold text-xl tracking-widest uppercase">GlobalAid</span>
+<span class="font-bold text-xl tracking-widest uppercase">UnityCorp</span>
+<span class="font-bold text-xl tracking-widest uppercase">EcoThreads</span>
+<span class="font-bold text-xl tracking-widest uppercase">CareNet</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest py-16">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1">
+<span class="font-headline-md text-headline-md font-bold text-primary block mb-6">Bank of Clothes</span>
+<p class="text-body-sm text-on-surface-variant mb-6">
+                        An institutional-grade platform for the ethical management and distribution of apparel resources.
+                    </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary cursor-pointer" data-icon="public">public</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer" data-icon="mail">mail</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer" data-icon="share">share</span>
+</div>
+</div>
+<div>
+<h6 class="font-label-md text-label-md text-primary mb-4">Platform</h6>
+<ul class="space-y-3 text-body-sm text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors" href="#">How it Works</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Impact Reports</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Inventory System</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Trust &amp; Safety</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-md text-label-md text-primary mb-4">Community</h6>
+<ul class="space-y-3 text-body-sm text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors" href="#">Volunteer</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Partner Agencies</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Success Stories</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Local Chapters</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-md text-label-md text-primary mb-4">Legal</h6>
+<ul class="space-y-3 text-body-sm text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Cookie Policy</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Data Security</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-body-sm text-on-surface-variant">© 2024 Bank of Clothes Platform. All rights reserved.</p>
+<div class="flex gap-8 text-body-sm text-on-surface-variant">
+<span>English (US)</span>
+<span>Status: Fully Operational</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2 px-margin-mobile bg-surface shadow-lg rounded-t-xl">
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-[10px]">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-label-md text-[10px]">Donate</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-md text-[10px]">Browse</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1">
+<span class="material-symbols-outlined" data-icon="Checklist">checklist</span>
+<span class="font-label-md text-[10px]">Requests</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-md text-[10px]">Inbox</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register - Bank of Clothes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d2e4ff",
+                        "inverse-primary": "#b5c8e5",
+                        "on-tertiary-container": "#009a79",
+                        "tertiary-fixed-dim": "#40deb3",
+                        "surface-variant": "#e4e2e4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#303032",
+                        "on-primary-fixed": "#081c32",
+                        "surface": "#fbf9fb",
+                        "surface-tint": "#4d6079",
+                        "secondary-container": "#92edff",
+                        "secondary-fixed-dim": "#77d4e5",
+                        "background": "#fbf9fb",
+                        "on-background": "#1b1c1d",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#7689a4",
+                        "outline": "#74777d",
+                        "secondary-fixed": "#9eefff",
+                        "on-secondary-container": "#006d7b",
+                        "tertiary-container": "#00261c",
+                        "surface-container-highest": "#e4e2e4",
+                        "outline-variant": "#c4c6cd",
+                        "surface-container-high": "#e9e7ea",
+                        "surface-container-low": "#f5f3f5",
+                        "tertiary": "#000c07",
+                        "on-tertiary-fixed-variant": "#00513e",
+                        "tertiary-fixed": "#65fbcf",
+                        "on-surface": "#1b1c1d",
+                        "primary": "#000917",
+                        "surface-dim": "#dbd9dc",
+                        "on-surface-variant": "#44474d",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#0d2137",
+                        "surface-bright": "#fbf9fb",
+                        "on-secondary-fixed": "#001f24",
+                        "inverse-on-surface": "#f2f0f2",
+                        "on-secondary-fixed-variant": "#004e59",
+                        "on-tertiary-fixed": "#002117",
+                        "surface-container": "#efedef",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#364860",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "max-width": "1280px",
+                        "margin-tablet": "32px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbf9fb;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex items-center justify-center p-margin-mobile">
+<!-- Auth Shell Suppression: No TopAppBar or BottomNavBar as per transactional rule -->
+<div class="w-full max-w-md">
+<!-- Hero Section / Branding -->
+<div class="text-center mb-10">
+<div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary-container text-primary-fixed shadow-sm">
+<span class="material-symbols-outlined text-4xl" data-icon="account_balance">account_balance</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2">Join the Bank</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Empowering the PMU community through sustainable fashion.</p>
+</div>
+<!-- Registration Form Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-outline-variant p-6 md:p-8">
+<form class="space-y-6">
+<!-- Full Name -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="name">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl" data-icon="person">person</span>
+<input class="w-full pl-11 pr-4 py-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all bg-surface font-body-md text-body-md" id="name" placeholder="John Doe" type="text"/>
+</div>
+</div>
+<!-- Student ID -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="student_id">Student ID</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl" data-icon="badge">badge</span>
+<input class="w-full pl-11 pr-4 py-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all bg-surface font-body-md text-body-md" id="student_id" placeholder="202400123" type="text"/>
+</div>
+</div>
+<!-- Email Address -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="email">University Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl" data-icon="mail">mail</span>
+<input class="w-full pl-11 pr-4 py-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all bg-surface font-body-md text-body-md" id="email" placeholder="name@pmu.edu.sa" type="email"/>
+</div>
+</div>
+<!-- Password -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="password">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl" data-icon="lock">lock</span>
+<input class="w-full pl-11 pr-12 py-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all bg-surface font-body-md text-body-md" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Role Selector -->
+<div class="space-y-2">
+<span class="block font-label-md text-label-md text-on-surface-variant">Account Type</span>
+<div class="grid grid-cols-2 gap-4">
+<label class="relative flex items-center justify-center p-3 rounded-lg border border-outline-variant cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:bg-secondary-container has-[:checked]:border-secondary group">
+<input checked="" class="sr-only" name="role" type="radio" value="donor"/>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-secondary group-has-[:checked]:text-on-secondary-container" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-label-md text-on-surface group-has-[:checked]:text-on-secondary-container">Donor</span>
+</div>
+</label>
+<label class="relative flex items-center justify-center p-3 rounded-lg border border-outline-variant cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:bg-secondary-container has-[:checked]:border-secondary group">
+<input class="sr-only" name="role" type="radio" value="recipient"/>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-secondary group-has-[:checked]:text-on-secondary-container" data-icon="handshake">handshake</span>
+<span class="font-label-md text-on-surface group-has-[:checked]:text-on-secondary-container">Recipient</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-headline-md text-headline-md shadow-sm hover:bg-primary-container active:scale-[0.98] transition-all mt-4" type="submit">
+                    Create Account
+                </button>
+</form>
+<div class="mt-8 pt-6 border-t border-outline-variant text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Already have an account? 
+                    <a class="text-secondary font-bold hover:underline" href="#">Sign In</a>
+</p>
+</div>
+</div>
+<!-- Progress/Trust Indicator -->
+<div class="mt-8 flex items-center justify-center gap-4 px-4 opacity-70">
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Verified Institution</span>
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+</div>
+<div class="mt-4 flex justify-center gap-6">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container"></div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Secure Data</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container"></div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">PMU SSO</span>
+</div>
+</div>
+</div>
+</body></html>
