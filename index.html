@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bank of Clothes – Create Account</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:       #1aa47a;
+      --teal-light: #e8f7f2;
+      --teal-dark:  #148a63;
+      --navy:       #1c2b3a;
+      --navy-mid:   #253547;
+      --slate:      #3e5367;
+      --muted:      #7a9ab3;
+      --border:     #dde5ec;
+      --bg:         #f4f7fa;
+      --white:      #ffffff;
+      --error:      #e5483a;
+      --success:    #1aa47a;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 48px;
+      height: 68px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { font-size: 22px; }
+    .logo-text { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px; color: var(--navy); }
+    .portal-badge {
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600;
+      color: var(--teal); letter-spacing: 0.05em;
+    }
+    .portal-badge span { font-size: 18px; }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1100px;
+      margin: 48px auto;
+      gap: 0;
+      width: 100%;
+      padding: 0 24px;
+      align-items: start;
+    }
+
+    /* ── LEFT HERO PANEL ── */
+    .hero {
+      background: linear-gradient(165deg, #1c2b3a 0%, #253547 50%, #1a3348 100%);
+      border-radius: 20px 0 0 20px;
+      padding: 56px 48px 0;
+      min-height: 600px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      right: -60px; bottom: -60px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,164,122,0.15) 0%, transparent 70%);
+    }
+    .hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .hero p {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 36px;
+      position: relative;
+    }
+    .hero-stats { display: flex; flex-direction: column; gap: 16px; position: relative; }
+    .stat-item {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .stat-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .stat-text strong { display: block; color: var(--white); font-size: 15px; font-weight: 600; }
+    .stat-text span { color: rgba(255,255,255,0.45); font-size: 13px; }
+    .hero-image {
+      margin-top: auto;
+      text-align: center;
+      font-size: 100px;
+      line-height: 1;
+      opacity: 0.18;
+      user-select: none;
+      margin-bottom: -8px;
+    }
+
+    /* ── RIGHT FORM PANEL ── */
+    .form-panel {
+      background: var(--white);
+      border-radius: 0 20px 20px 0;
+      padding: 56px 48px;
+      box-shadow: 4px 0 40px rgba(28,43,58,0.08);
+    }
+    .form-panel h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .form-panel .subtitle {
+      color: var(--slate);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    /* Account type selector */
+    .field-label {
+      font-family: 'Sora', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .type-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+    .type-btn {
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 12px;
+      cursor: pointer;
+      background: var(--white);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      transition: all 0.2s;
+    }
+    .type-btn .type-icon { font-size: 26px; }
+    .type-btn span { font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: var(--navy); }
+    .type-btn:hover { border-color: var(--teal); background: var(--teal-light); }
+    .type-btn.active { border-color: var(--teal); background: var(--teal-light); }
+    .type-btn.active span { color: var(--teal-dark); }
+
+    /* Fields */
+    .field { margin-bottom: 20px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+    .input-wrap {
+      display: flex; align-items: center;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+    .input-wrap:focus-within { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(26,164,122,0.12); }
+    .input-wrap.error { border-color: var(--error); }
+    .input-icon {
+      padding: 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .input-wrap input {
+      flex: 1;
+      padding: 13px 14px 13px 0;
+      border: none; outline: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--navy);
+      background: transparent;
+    }
+    .input-wrap input::placeholder { color: var(--muted); }
+    .hint { font-size: 12px; color: var(--muted); margin-top: 5px; }
+    .hint.error-msg { color: var(--error); display: none; }
+    .hint.error-msg.visible { display: block; }
+
+    /* Submit */
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      font-family: 'Sora', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 8px;
+      letter-spacing: 0.01em;
+    }
+    .submit-btn:hover { background: #253547; }
+    .submit-btn:active { transform: scale(0.99); }
+    .submit-btn:disabled { background: #a0adb8; cursor: not-allowed; }
+
+    /* Toast */
+    .toast {
+      position: fixed; top: 80px; right: 24px;
+      padding: 14px 20px; border-radius: 12px;
+      font-size: 14px; font-weight: 500;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+      opacity: 0; transform: translateY(-8px);
+      transition: all 0.3s;
+      z-index: 100;
+      max-width: 340px;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .toast.success { background: var(--teal); color: white; }
+    .toast.error   { background: var(--error); color: white; }
+
+    /* Already have account link */
+    .login-link {
+      text-align: center; margin-top: 20px; font-size: 13px; color: var(--muted);
+    }
+    .login-link a { color: var(--teal); text-decoration: none; font-weight: 600; }
+
+    @media (max-width: 780px) {
+      main { grid-template-columns: 1fr; }
+      .hero { border-radius: 20px 20px 0 0; min-height: auto; padding-bottom: 36px; }
+      .form-panel { border-radius: 0 0 20px 20px; }
+      .hero-image { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">
+    <span class="logo-icon">🏛️</span>
+    <span class="logo-text">Bank of Clothes</span>
+  </a>
+  <div class="portal-badge">
+    <span>✅</span> PMU OFFICIAL PORTAL
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+  <!-- LEFT HERO -->
+  <div class="hero">
+    <h1>Empowering Our Community.</h1>
+    <p>Join the Bank of Clothes network to manage, donate, or receive high-quality apparel within the PMU ecosystem.</p>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-icon">👥</div>
+        <div class="stat-text">
+          <strong>Join 2,000+ Students</strong>
+          <span>Active community participation</span>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">📦</div>
+        <div class="stat-text">
+          <strong id="stat-items">15k+ Items Donated</strong>
+          <span>Supporting sustainable fashion</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image">👔</div>
+  </div>
+
+  <!-- RIGHT FORM -->
+  <div class="form-panel">
+    <h2>Create Account</h2>
+    <p class="subtitle">Register with your institutional credentials to get started.</p>
+
+    <label class="field-label">Account Type</label>
+    <div class="type-selector">
+      <button class="type-btn active" data-type="donor" onclick="selectType('donor', this)">
+        <span class="type-icon">🤝</span>
+        <span>Donor</span>
+      </button>
+      <button class="type-btn" data-type="recipient" onclick="selectType('recipient', this)">
+        <span class="type-icon">🛍️</span>
+        <span>Recipient</span>
+      </button>
+    </div>
+    <input type="hidden" id="accountType" value="donor" />
+
+    <div class="field">
+      <label class="field-label">Full Name</label>
+      <div class="input-wrap" id="wrap-fullName">
+        <span class="input-icon">👤</span>
+        <input type="text" id="fullName" placeholder="John Doe" />
+      </div>
+      <span class="hint error-msg" id="err-fullName"></span>
+    </div>
+
+    <div class="field-row">
+      <div>
+        <label class="field-label">Student ID</label>
+        <div class="input-wrap" id="wrap-studentId">
+          <span class="input-icon">🪪</span>
+          <input type="text" id="studentId" placeholder="20230000" maxlength="10" />
+        </div>
+        <span class="hint error-msg" id="err-studentId"></span>
+      </div>
+      <div>
+        <label class="field-label">Password</label>
+        <div class="input-wrap" id="wrap-password">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="password" placeholder="••••••••" />
+        </div>
+        <span class="hint error-msg" id="err-password"></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">University Email</label>
+      <div class="input-wrap" id="wrap-email">
+        <span class="input-icon">✉️</span>
+        <input type="email" id="email" placeholder="student@pmu.edu.sa" />
+      </div>
+      <span class="hint">Must be a valid @pmu.edu.sa address</span>
+      <span class="hint error-msg" id="err-email"></span>
+    </div>
+
+    <button class="submit-btn" id="submitBtn" onclick="handleSubmit()">Create Account</button>
+
+    <div class="login-link">
+      Already have an account? <a href="#" onclick="showLoginMode()">Sign In</a>
+    </div>
+  </div>
+</main>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+  const API = "http://localhost:3000";
+
+  function selectType(type, btn) {
+    document.querySelectorAll(".type-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    document.getElementById("accountType").value = type;
+  }
+
+  function showToast(msg, type = "success") {
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.className = `toast ${type} show`;
+    setTimeout(() => t.classList.remove("show"), 3500);
+  }
+
+  function setError(field, msg) {
+    document.getElementById("wrap-" + field).classList.add("error");
+    const el = document.getElementById("err-" + field);
+    el.textContent = msg;
+    el.classList.add("visible");
+  }
+
+  function clearErrors() {
+    ["fullName","studentId","password","email"].forEach(f => {
+      document.getElementById("wrap-" + f).classList.remove("error");
+      const el = document.getElementById("err-" + f);
+      el.textContent = "";
+      el.classList.remove("visible");
+    });
+  }
+
+  async function handleSubmit() {
+    clearErrors();
+    const btn = document.getElementById("submitBtn");
+    btn.disabled = true;
+    btn.textContent = "Creating account…";
+
+    const payload = {
+      fullName:    document.getElementById("fullName").value.trim(),
+      studentId:   document.getElementById("studentId").value.trim(),
+      password:    document.getElementById("password").value,
+      email:       document.getElementById("email").value.trim(),
+      accountType: document.getElementById("accountType").value,
+    };
+
+    try {
+      const res  = await fetch(`${API}/api/auth/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        localStorage.setItem("boc_token", data.token);
+        localStorage.setItem("boc_user", JSON.stringify(data.user));
+        showToast(`Welcome, ${data.user.fullName}! 🎉 Account created.`, "success");
+        setTimeout(() => {
+          document.querySelector(".form-panel h2").textContent = "Welcome back!";
+          document.querySelector(".subtitle").textContent =
+            `Signed in as ${data.user.email} · ${data.user.accountType}`;
+          btn.textContent = "Go to Dashboard →";
+          btn.disabled = false;
+          btn.onclick = () => alert("Dashboard coming soon!");
+        }, 1200);
+      } else {
+        (data.errors || []).forEach(err => {
+          if (err.toLowerCase().includes("name"))     setError("fullName", err);
+          else if (err.toLowerCase().includes("id"))  setError("studentId", err);
+          else if (err.toLowerCase().includes("pass")) setError("password", err);
+          else if (err.toLowerCase().includes("email")) setError("email", err);
+          else showToast(err, "error");
+        });
+        btn.disabled = false;
+        btn.textContent = "Create Account";
+      }
+    } catch (e) {
+      showToast("Cannot reach server. Make sure server.js is running on port 3000.", "error");
+      btn.disabled = false;
+      btn.textContent = "Create Account";
+    }
+  }
+
+  function showLoginMode() {
+    // Swap to login form inline
+    document.querySelector(".form-panel h2").textContent = "Sign In";
+    document.querySelector(".subtitle").textContent = "Use your Student ID or email + password.";
+    document.querySelector(".type-selector").parentElement.style.display = "none";
+    document.getElementById("submitBtn").textContent = "Sign In";
+    document.getElementById("submitBtn").onclick = handleLogin;
+    document.querySelector(".login-link").innerHTML =
+      `Don't have an account? <a href="#" onclick="location.reload()">Register</a>`;
+  }
+
+  async function handleLogin() {
+    clearErrors();
+    const btn = document.getElementById("submitBtn");
+    btn.disabled = true;
+    btn.textContent = "Signing in…";
+
+    const payload = {
+      studentId: document.getElementById("studentId").value.trim(),
+      email:     document.getElementById("email").value.trim(),
+      password:  document.getElementById("password").value,
+    };
+
+    try {
+      const res  = await fetch(`${API}/api/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        localStorage.setItem("boc_token", data.token);
+        showToast(`Welcome back, ${data.user.fullName}! ✅`, "success");
+        setTimeout(() => {
+          btn.textContent = "Go to Dashboard →";
+          btn.disabled = false;
+          btn.onclick = () => alert("Dashboard coming soon!");
+        }, 1000);
+      } else {
+        showToast((data.errors || ["Invalid credentials."])[0], "error");
+        btn.disabled = false;
+        btn.textContent = "Sign In";
+      }
+    } catch (e) {
+      showToast("Cannot reach server.", "error");
+      btn.disabled = false;
+      btn.textContent = "Sign In";
+    }
+  }
+
+  // Live-update stat counter from API
+  async function loadStats() {
+    try {
+      const res  = await fetch(`${API}/api/stats`);
+      const data = await res.json();
+      if (data.success) {
+        document.getElementById("stat-items").textContent =
+          `${data.stats.totalDonations} Items Donated`;
+      }
+    } catch {}
+  }
+  loadStats();
+</script>
+</body>
+</html>
